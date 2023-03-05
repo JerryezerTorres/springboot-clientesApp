@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head"></head>
+<meta charset="UTF-8">
+<title>Home</title>
+</head>
+
+<body>
+
+	<header th:replace="plantilla/template :: header"></header>
+	<div class="container">
+		
+		<img class="rounded mx-auto d-block" th:src="@{/images/hola.png}" whith="100" heigth="100" alt="...">   
+	</div>
+	
+	
+
+		
+<div class=" fixed-bottom">
+<footer th:replace="plantilla/template :: footer"> </footer>
+</div>
+		
+
+	
+	
+	<script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+	
+	
+	
+</body>
+</html>

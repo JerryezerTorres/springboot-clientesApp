@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head"></head>
+<meta charset="UTF-8">
+<title>Home</title>
+</head>
+
+<body>
+
+	<header th:replace="plantilla/template :: header"></header>
+	
+	<div class="container text-center py-3">
+		<div class="panel">
+			<div class="panel-heading">
+				<h3 class="panel-title text-danger fw-bold">
+					<span th:text="${error}"></span> - <span th:text="${status}"></span>
+				</h3>
+			</div>
+		</div>
+		<div class="panel-body">
+			<img th:src="@{/images/error1.png}" whith="48" heigth="48">
+			<br>
+			<h4>Uppss!!!! Ha hecho una solicitud incorecta</h4>
+			<br>
+			<button class="btn btn-success" onclick="goBack()">&laquo; Regresar</button>
+		</div>
+	</div>
+
+	<div class="container">
+		<footer th:replace="plantilla/template :: footer"> </footer>
+	</div>
+	
+	<script>
+		function goBack(){
+			window.history.back();
+		}
+	</script>
+	
+	<script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+	
+	
+</body>
+</html>

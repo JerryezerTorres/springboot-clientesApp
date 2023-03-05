@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head"></head>
+<meta charset="UTF-8">
+<title>Listado</title>
+</head>
+
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+
+	<div class="container">
+		<div class="card bg-ligth">
+			<div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+			<div class=card-body>
+				<div>
+					<form class="mb-3" th:action="@{/views/clientes/save}"
+						th:object="${cliente}" method="post">
+						<input type="hidden" th:field="*{id}"> <label for="nombre"
+							class="col-sm-2 col-form-label">Nombre:</label>
+						<div class="col-sm-3">
+							<input type="text" th:field="*{nombre}" class="form-control"
+								id="nombre" placeholder="Nombre del Cliente"> 
+								<small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}"
+								th:errors="*{nombre}">
+								</small>
+						</div>
+						<label for="apellidos" class="col-sm-2 col-form-label">Apellido:</label>
+						<div class="col-sm-3">
+							<input type="text" th:field="*{apellidos}" class="form-control"
+								id="apellidos" placeholder="Apellidos del Cliente"> 
+								<small class="form-text text-danger" th:if="${#fields.hasErrors('apellidos')}"
+								th:errors="*{apellidos}">
+								</small>
+						</div>
+						<label for="telefono" class="col-sm-2 col-form-label">Telefono:</label>
+						<div class="col-sm-3">
+							<input type="text" th:field="*{telefono}" class="form-control"
+								id="telefono" placeholder="Teléfono del Cliente"> 
+								<small class="form-text text-danger" th:if="${#fields.hasErrors('telefono')}"
+								th:errors="*{telefono}">
+								</small>
+						</div>
+						<label for="email" class="col-sm-2 col-form-label">Email:</label>
+						<div class="col-sm-3">
+							<input type="text" th:field="*{email}" class="form-control"
+								id="email" placeholder="Email del Cliente"> 
+								<small class="form-text text-danger" th:if="${#fields.hasErrors('email')}"
+								th:errors="*{email}">
+								</small>
+						</div>
+						<label for="ciudad" class="col-sm-2 col-form-label">Ciudad:</label>
+						<div class="col-sm-3">
+							<select th:field="*{ciudad}" class="form-select" id="ciudad">
+								<option th:each="ciudad:${ciudades}" th:value="${ciudad.id}"
+									th:text="${ciudad.ciudad}" />
+							</select>
+						</div>
+						<br> <br>
+						<div class="card-footer bg-dark">
+							<input type="submit" class="btn btn-primary btn-sm "
+								value="Guardar">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer th:replace="plantilla/template :: footer"> </footer>
+
+
+	<script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+
+
+</body>
+</html>

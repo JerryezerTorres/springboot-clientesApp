@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8">
+<title>CRUD-Clientes</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+
+</head>
+<body>
+
+	<!-- BARRA DE NAVEGACION -------------------------------------------------------------------->
+	<header th:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container">
+				<a class="navbar-brand" href="#">Logo</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" th:href="@{/}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/views/clientes/}">Clientes</a></li>
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+		<!-- FIN BARRA DE NAVEGACION -------------------------------------------------------------------->
+
+		<!-- MENSAJES DE ALERTA -->
+		<div class="alert alert-success alert-dismissible fade show"
+			th:if="${success != null}" role="alert">
+			<strong th:text="${success}"></strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert"
+				aria-label="Close"></button>
+		</div>
+		<div class="alert alert-danger alert-dissmisable fade show"
+			th:if="${error != null}" role="alert">
+			<strong th:text="${error}"></strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert"
+				aria-label="Close"></button>
+		</div>
+		<div class="alert alert-warning alert-dissmisable fade show"
+			th:if="${warning != null}" role="alert">
+			<strong th:text="${warning}"></strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert"
+				aria-label="Close"></button>
+		</div>
+		<div class="alert alert-info alert-dissmisable fade show"
+			th:if="${info != null}" role="alert">
+			<strong th:text="${info}"></strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert"
+				aria-label="Close"></button>
+		</div>
+
+	</header>
+
+	<div class="container"></div>
+
+
+	<footer th:fragment="footer" class="bg-dark text-light text-center ">
+		<!-- fixed-bottom -->
+		<div>
+			<p>Copyright © 2021</p>
+			<p class="text-muted">
+				Jerryezer Torres García <a href="#" class="text-reset">reset
+					link</a>.
+			</p>
+		</div>
+	</footer>
+
+
+
+	<script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+
+
+
+</body>
+</html>
